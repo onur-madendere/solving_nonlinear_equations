@@ -5,7 +5,6 @@ fprintf("secant icin,\n");
 x0=input("bir x0 noktasi girin: ");
 x1=input("bir x1 noktasi girin: ");
 n=1;
-max_n=100000;
 temp0=0;
 temp1=0;
 cur0=x0;
@@ -17,7 +16,7 @@ while 1
     temp1=cur1;
     cur0=cur1;
     cur1=next;
-    if abs(next-temp1)<tol || n>=max_n
+    if abs(next-temp1)<tol
         break;
     end
 end
