@@ -15,7 +15,7 @@ a=input("araligin sol siniri: ");
 b=input("araligin sag siniri: ");
 
 maksg=@(x) -g(x);
-if fminbnd(g,a,b)>=a && fminbnd(maksg, a,b)<=b
+if g(fminbnd(g,a,b))>=a && g(fminbnd(maksg, a,b))<=b
     flag0=1;
     fprintf("fonksiyonun bu aralikta sabit noktasi var\n");
 else
@@ -23,7 +23,7 @@ else
 end
 
 maksdg=@(x) -dg(x);
-if flag0==1 && abs(fminbnd(dg,a,b))<1 && abs(fminbnd(maksdg,a,b))<1
+if flag0==1 && abs(dg(fminbnd(dg,a,b)))<1 && abs(dg(fminbnd(maksdg,a,b)))<1
     flag1=1;
     fprintf("fonksiyonun bu aralikta sabit noktasi bir tane\n");
 else
