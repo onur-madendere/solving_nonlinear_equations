@@ -3,6 +3,8 @@ f=@(x) exp(x)-x^2+3*x-2;
 fprintf("aralik yarilama icin,\n");
 a=input("araligin sol siniri: ");
 b=input("araligin sag siniri: ");
+a0=a;
+b0=b;
 n=0;
 
 if f(a)*f(b)>0
@@ -38,6 +40,8 @@ else
         end      
     end
     fprintf("%d iterasyon sayisi\n", n);
+    fprintf("%d ondalik basamak dogruluk icin gereken minimum iterasyon sayisi %d\n", -log10(tol), ceil(log2(abs(b0-a0)/tol)));
+
 end
 
 
