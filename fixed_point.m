@@ -1,10 +1,9 @@
 syms x g1 dg1
-g1=sqrt(2-sin(x));
+g1=(x+3/x)/2;
 dg1=diff(g1);
 g=matlabFunction(g1);
 dg=matlabFunction(dg1);
 
-tol=1e-6;
 flag0=0;
 flag1=0;
 
@@ -15,7 +14,7 @@ a=input("araligin sol siniri: ");
 b=input("araligin sag siniri: ");
 
 maksg=@(x) -g(x);
-if g(fminbnd(g,a,b))>=a && g(fminbnd(maksg, a,b))<=b
+if g(fminbnd(g,a,b))>=a && g(fminbnd(maksg, a,b))<=b 
     flag0=1;
     fprintf("fonksiyonun bu aralikta sabit noktasi var\n");
 else
@@ -23,10 +22,10 @@ else
 end
 
 maksdg=@(x) -dg(x);
-if flag0==1 && abs(dg(fminbnd(dg,a,b)))<1 && abs(dg(fminbnd(maksdg,a,b)))<1
+if flag0==1 && abs(dg(fminbnd(dg,a,b)))<1 && abs(dg(fminbnd(maksdg,a,b)))<1 
     flag1=1;
     fprintf("fonksiyonun bu aralikta sabit noktasi bir tane\n");
-else
+elseif flag0==1
     fprintf("sabit noktasi bir tane degil\n");
 end
 
