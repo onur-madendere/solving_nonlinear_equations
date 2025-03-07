@@ -5,7 +5,7 @@ fprintf("secant icin,\n");
 x0=input("bir x0 noktasi girin: ");
 x1=input("bir x1 noktasi girin: ");
 n=1;
-temp0=0;
+
 temp1=0;
 cur0=x0;
 cur1=x1;
@@ -22,4 +22,4 @@ while 1
 end
 
 fprintf("kok %5.6f\n", cur1);
-fprintf("iterasyon sayisi %d\n", n);
+fprintf("sekant iterasyon sayisi %d\n", n);

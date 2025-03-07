@@ -1,4 +1,4 @@
-tol=1e-6;
+tol=1e-30;
 f=@(x) exp(x)-x^2+3*x-2;
 fprintf("aralik yarilama icin,\n");
 a=input("araligin sol siniri: ");
@@ -30,7 +30,7 @@ else
         end
 
         if f(m)==0
-            fprintf("kok %5.6f",m);
+            fprintf("kok %5.6f\n",m);
             break;
         end
        
@@ -39,7 +39,7 @@ else
             break;
         end      
     end
-    fprintf("%d iterasyon sayisi\n", n);
+    fprintf("aralik yarilama ile %d iterasyon sayisi\n", n);
     fprintf("%d ondalik basamak dogruluk icin gereken minimum iterasyon sayisi %d\n", -log10(tol), ceil(log2(abs(b0-a0)/tol)));
 
 end

@@ -36,5 +36,5 @@ else
             break;
         end    
     end
-    fprintf("iterasyon sayisi %d\n",n);
+    fprintf("rfm iterasyon sayisi %d\n",n);
 end

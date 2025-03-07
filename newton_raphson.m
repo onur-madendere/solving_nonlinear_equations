@@ -28,8 +28,9 @@ while 1
         break;
     end
 end
-fprintf("iterasyon sayisi %d\n", n);
 fprintf("kok %5.6f", cur);
+fprintf("n-r ile iterasyon sayisi %d\n", n);
+
 
 
 
